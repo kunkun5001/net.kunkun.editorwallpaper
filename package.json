@@ -1,7 +1,7 @@
 {
   "name": "net.kunkun.editorwallpaper",
   "displayName": "Kokoa's EditorWallpaper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2022.3",
   "description": "\u3044\u3044\u611f\u3058\u306e\u8aac\u660e",
   "author": {
@@ -9,8 +9,8 @@
     "url": "https://github.com/rassi0429"
   },
   "license": "MIT",
-  "licenseUrl": "https://github.com/myusername/mypackage/blob/main/LICENSE",
-  "changelogUrl": "https://github.com/myusername/mypackage/blob/main/CHANGELOG.md",
+  "licenseUrl": "https://github.com/kunkun5001/net.kunkun.editorwallpaper/blob/main/LICENSE",
+  "changelogUrl": "https://github.com/kunkun5001/net.kunkun.editorwallpaper/blob/main/CHANGELOG.md",
   "vpmDependencies": {
     "com.vrchat.avatars": "^3.5.0"
   }
