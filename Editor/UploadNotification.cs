@@ -29,7 +29,7 @@ namespace net.kunkun.editorwallpaper
         public float successVolume = 1.0f;
         public float errorVolume = 1.0f;
 
-        private const string TemplateFolder = "Assets/kokoa/VRChatUploadSound/Assets";
+        private const string TemplateFolder = "Assets/kokoa/VRChatUploadSound/Asset";
 
         public string GetSuccessSoundPath()
         {
@@ -464,6 +464,7 @@ namespace net.kunkun.editorwallpaper
 
                 if (File.Exists(fullPath))
                 {
+                    // PowerShellでMediaPlayerを使って再生（ダイアログ表示中でも動作）
                     string script = $@"
 Add-Type -AssemblyName PresentationCore
 $player = New-Object System.Windows.Media.MediaPlayer
@@ -804,7 +805,7 @@ Remove-Item $MyInvocation.MyCommand.Path -Force
         }
         #endif
 
-        [MenuItem("Tools/VRChat アップロード通知音設定")]
+        [MenuItem("Tools/Upload Notification Sound")]
         private static void OpenSettings()
         {
             UploadNotificationSettingsWindow.ShowWindow();
@@ -841,7 +842,7 @@ Remove-Item $MyInvocation.MyCommand.Path -Force
 
         public static void ShowWindow()
         {
-            var window = GetWindow<UploadNotificationSettingsWindow>("Upload Notification Settings");
+            var window = GetWindow<UploadNotificationSettingsWindow>("Upload Notification");
             window.minSize = new Vector2(350, 420);
             window.Show();
         }
@@ -886,7 +887,7 @@ Remove-Item $MyInvocation.MyCommand.Path -Force
 
             // ヘッダー
             EditorGUILayout.Space(5);
-            GUILayout.Label("アップロード通知音設定", _headerStyle);
+            GUILayout.Label("Upload Notification", _headerStyle);
             GUILayout.Label($"v{VERSION} by kokoa", _versionStyle);
 
             // SDK状態（コンパクト表示）
@@ -909,10 +910,6 @@ Remove-Item $MyInvocation.MyCommand.Path -Force
             settings.enabled = EditorGUILayout.Toggle("通知を有効にする", settings.enabled);
             #if UNITY_EDITOR_WIN
             settings.toastEnabled = EditorGUILayout.Toggle("Windowsトースト通知", settings.toastEnabled);
-            if (settings.toastEnabled)
-            {
-                EditorGUILayout.HelpBox("Windowsの通知センターにポップアップを表示します", MessageType.Info);
-            }
             #endif
             EditorGUILayout.EndVertical();
 
@@ -976,7 +973,7 @@ Remove-Item $MyInvocation.MyCommand.Path -Force
                 normal = { textColor = color },
                 fontStyle = FontStyle.Bold
             };
-            GUILayout.Label($"[{(available ? "検出" : "未検出")}] {name} SDK", style);
+            GUILayout.Label($"[{(available ? "OK" : "--")}] {name} SDK", style);
         }
 
         private void DrawSoundSelector(string label, string[] soundLabels, ref SoundSelection selection, 
