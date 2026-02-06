@@ -3,7 +3,7 @@
   "displayName": "Kokoa's EditorWallpaper",
   "version": "1.0.7",
   "unity": "2022.3",
-  "description": "\u3044\u3044\u611f\u3058\u306e\u8aac\u660e",
+  "description": "An extension that allows you to set custom wallpapers in the Unity Editor.",
   "author": {
     "name": "Kokoa",
     "url": "https://github.com/rassi0429"
