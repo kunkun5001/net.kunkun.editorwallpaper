@@ -1,9 +1,9 @@
 name: "Release Publish"
 
 on:
-  publish:
-    tags:
-      - "*.*.*"
+  release:
+    types: published
+    tags: "*.*.*"
 
 permissions:
   contents: write
