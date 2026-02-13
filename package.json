@@ -1,7 +1,7 @@
 {
   "name": "net.kunkun.editorwallpaper",
   "displayName": "Kokoa's EditorWallpaper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "unity": "2022.3",
   "description": "An extension that allows you to set custom wallpapers in the Unity Editor.",
   "author": {
